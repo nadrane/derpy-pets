@@ -1,6 +1,7 @@
 import React from 'react';
 
-const AnimalProfile = ({ selectedAnimal }) => {
+const AnimalProfile = ({ params, cats, dogs }) => {
+  const selectedAnimal = [...cats, ...dogs].find(animal => animal.id === +params.id);
   const { name, species, gender, description, imageUrl } = selectedAnimal;
 
   return (

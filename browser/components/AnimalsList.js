@@ -2,7 +2,7 @@ import React from 'react';
 import AnimalCard from './AnimalCard';
 
 const AnimalsList = (props) => {
-  const { params, cats, dogs, selectAnimal } = props;
+  const { params, cats, dogs } = props;
   const animals = params.filter !== 'all' ? props[params.filter] : [...cats, ...dogs];
 
   return (
@@ -13,7 +13,6 @@ const AnimalsList = (props) => {
           animals.map(animal => <AnimalCard
             key={animal.id}
             animal={animal}
-            selectAnimal={selectAnimal}
           />)
         }
       </div>

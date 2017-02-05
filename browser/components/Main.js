@@ -9,14 +9,7 @@ class Main extends React.Component {
     this.state = {
       cats: catsData,
       dogs: dogsData,
-      selectedAnimal: {},
     }
-  }
-
-  selectAnimal(animal) {
-    this.setState({
-      selectedAnimal: animal
-    });
   }
 
   render() {
