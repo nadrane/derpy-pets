@@ -1,19 +1,24 @@
 import React from 'react';
 import AnimalCard from './AnimalCard';
 
-const AnimalsList = ({ animals, species, selectAnimal }) => (
-  <div className="row">
-    <h4>adopt a { species }!</h4>
-    <div>
-      {
-        animals.map(animal => <AnimalCard
-          key={animal.id}
-          animal={animal}
-          selectAnimal={selectAnimal}
-        />)
-      }
+const AnimalsList = (props) => {
+  const { params, cats, dogs, selectAnimal } = props;
+  const animals = params.filter !== 'all' ? props[params.filter] : [...cats, ...dogs];
+
+  return (
+    <div className="row">
+      <h4>{ params.filter }</h4>
+      <div>
+        {
+          animals.map(animal => <AnimalCard
+            key={animal.id}
+            animal={animal}
+            selectAnimal={selectAnimal}
+          />)
+        }
+      </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default AnimalsList;
