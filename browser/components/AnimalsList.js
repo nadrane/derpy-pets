@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimalCard from './AnimalCard';
 
-const AnimalsList = ({ animals, view, selectAnimal }) => (
+const AnimalsList = ({ animals, view }) => (
   <div className="row">
     <h4>{view}</h4>
     <div>
@@ -9,7 +9,6 @@ const AnimalsList = ({ animals, view, selectAnimal }) => (
         animals.map(animal => <AnimalCard
           key={animal.id}
           animal={animal}
-          selectAnimal={selectAnimal}
         />)
       }
     </div>
