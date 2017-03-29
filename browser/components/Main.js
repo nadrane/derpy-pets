@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { catsData, dogsData } from '../../public/data';
+import { catsData, dogsData } from '../../data';
 import AnimalsList from './AnimalsList';
 import AnimalProfile from './AnimalProfile';
 
@@ -38,13 +38,10 @@ class Main extends React.Component {
         </div>
 
         <div className="App-content container-fluid">
-          {
-            this.state.view !== 'one' &&
-            <AnimalsList
-              animals={animalsToDisplay}
-              view={this.state.view}
-            />
-          }
+          <AnimalsList
+            animals={animalsToDisplay}
+            view={this.state.view}
+          />
         </div>
       </div>
     );
