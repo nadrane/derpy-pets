@@ -1,10 +1,8 @@
-let webpack = require('webpack');
-
 module.exports = {
   entry: './browser/index.js',
   output: {
     path: __dirname,
-    filename: './public/bundle.js'
+    filename: './public/bundle.js',
   },
   context: __dirname,
   module: {
@@ -14,9 +12,9 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ]
-  }
+          presets: ['react', 'es2015'],
+        },
+      },
+    ],
+  },
 };
