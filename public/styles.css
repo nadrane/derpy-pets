@@ -19,12 +19,12 @@ body {
   background-color: cadetblue;
   height: 250px;
   padding: 20px;
-  color: white;
 }
 
 .App-header h3 {
   font-weight: 200;
   margin-top: 5px;
+  color: white;
 }
 
 #home {
