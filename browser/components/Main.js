@@ -14,6 +14,10 @@ class Main extends React.Component {
     }
   }
 
+  changeView(view) {
+    this.setState({view})
+  }
+
   render() {
     const animalsToDisplay = this.state.view === 'all' ?
       [...this.state.cats, ...this.state.dogs] :
@@ -21,7 +25,7 @@ class Main extends React.Component {
 
     return (
       <div className="App">
-        <div className="App-header">
+        <div className="App-header" onClick={() => this.changeView('all')} >
           <img
             src="/logo.png"
             className="App-logo"
@@ -32,8 +36,14 @@ class Main extends React.Component {
 
         <div className="container cat-or-dog">
           <div className="row">
-            <button className="btn-flat btn-large col s5">I WANT A MEOWER</button>
-            <button className="btn-flat btn-large col s5 offset-s2">I WANT A BARKER</button>
+            <button className="btn-flat btn-large col s5"
+                   onClick={() => this.changeView('cats')}>
+                   I WANT A MEOWER
+            </button>
+            <button className="btn-flat btn-large col s5 offset-s2"
+                    onClick={() => this.changeView('dogs')}>
+                    I WANT A BARKER
+            </button>
           </div>
         </div>
 
